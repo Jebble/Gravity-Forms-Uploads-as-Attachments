@@ -3,7 +3,7 @@
 Plugin Name: Gravity Forms - Uploads as Attachments
 Plugin URI: https://github.com/Jebble/Gravity-Forms-Uploads-as-Attachments
 Description: Adds an option to send files from the fileupload field(s) as attachment with notifications
-Version: 0.1.0
+Version: 1.0.0
 Author: Jebble
 Author URI: http://jebble.nl/
 Text Domain: jbl_gfuaa
