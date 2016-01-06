@@ -1,5 +1,5 @@
 === Gravity Forms - Uploads as Attachments ===
-Contributors: jebble
+Contributors: jebble,admium-webdevelopment
 Tags: gravity forms, gravityforms, email, notification, attachment, attachments, uploads
 Requires at least: 2.5.0
 Tested up to: 4.4
