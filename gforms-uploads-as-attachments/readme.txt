@@ -1,11 +1,10 @@
 === Gravity Forms - Uploads as Attachments ===
 Contributors: jebble
-Tags: gravity, forms, gforms, file, upload, uploads, attachment, attachments, notification, notifications
+Tags: gravity forms, gravityforms, email, notification, attachment, attachments, uploads
 Requires at least: 0.1.0
 Tested up to: 4.4
 Stable tag: trunk
-License: GNU GPL
-License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
+License: GPLv2 or later.
 
 Adds the option to add all fileupload fields no notifications as attachments
 
