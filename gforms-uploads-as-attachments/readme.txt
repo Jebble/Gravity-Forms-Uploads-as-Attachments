@@ -1,7 +1,7 @@
 === Gravity Forms - Uploads as Attachments ===
 Contributors: jebble
 Tags: gravity forms, gravityforms, email, notification, attachment, attachments, uploads
-Requires at least: 0.1.0
+Requires at least: 2.5.0
 Tested up to: 4.4
 Stable tag: trunk
 License: GPLv2 or later.
