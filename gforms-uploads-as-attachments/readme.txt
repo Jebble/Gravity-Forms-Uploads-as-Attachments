@@ -23,6 +23,9 @@ This option will delete the files as soon as the notification that has this opti
 Installation instructions for WordPress plugins can be found in the codex.
 https://codex.wordpress.org/Managing_Plugins#Installing_Plugins
 
+== Screenshots ==
+1. Notification settings
+
 == Changelog ==
 0.1.0
 - Initial release
