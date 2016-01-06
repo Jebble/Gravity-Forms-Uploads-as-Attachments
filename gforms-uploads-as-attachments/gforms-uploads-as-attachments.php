@@ -27,22 +27,41 @@ function jbl_check_gforms() {
 add_filter( 'gform_notification_ui_settings', 'jbl_add_gform_notification_settings', 10, 3 );
 function jbl_add_gform_notification_settings( $ui_settings, $confirmation, $form ) {
 
-	/** Add fileuploads as attachments checkbox */
+	$checked_enable = '';
+	$checked_delete_files_after = '';
+
 	if( isset( $confirmation['jbl_gfuaa_enable'] ) && $confirmation['jbl_gfuaa_enable'] == 1 ) {
-		$checked = ' checked="checked"';
+		$checked_enable = ' checked="checked"';
 	}
-	else {
-		$checked = '';
+
+	if( isset( $confirmation['jbl_gfuaa_delete_files_after'] ) && $confirmation['jbl_gfuaa_delete_files_after'] == 1 ) {
+		$checked_delete_files_after = ' checked="checked"';
 	}
 
 	$ui_settings['jbl_uaa_settings'] = '
 		<tr valign="top">
+			<th colspan=2>
+				<hr>
+				<strong>Uploads as Attachments settings: </strong>
+			</th>
+		</tr>
+		<tr valign="top">
 			<th scope="row">
-				<label for="jbl_gfuaa_enable">' . __( 'Uploads as Attachments', 'jbl_gfuaa' ) . '</label>
+				<label for="jbl_gfuaa_enable">' . __( 'Enable', 'jbl_gfuaa' ) . '</label>
 			</th>
 			<td>
-				<input type="checkbox" id="jbl_gfuaa_enable" name="jbl_gfuaa_enable" value="1"' . $checked . '>
+				<input type="checkbox" id="jbl_gfuaa_enable" name="jbl_gfuaa_enable" value="1"' . $checked_enable . '>
 				<label for="jbl_gfuaa_enable" class="inline">' . __( 'Add fileupload fields from this form as attachments to this notification', 'jbl_gfuaa' ) . '</label>
+				<br>
+			</td>
+		</tr>
+		<tr valign="top">
+			<th scope="row">
+				<label for="jbl_gfuaa_delete_files_after">' . __( 'Delete files', 'jbl_gfuaa' ) . '</label>
+			</th>
+			<td>
+				<input type="checkbox" id="jbl_gfuaa_delete_files_after" name="jbl_gfuaa_delete_files_after" value="1"' . $checked_delete_files_after . '>
+				<label for="jbl_gfuaa_delete_files_after" class="inline">' . __( 'Delete uploaded files from server after notification sent?', 'jbl_gfuaa' ) . '</label>
 				<br>
 			</td>
 		</tr>
@@ -60,6 +79,10 @@ function jbl_save_gform_notification_settings( $notification, $form ) {
 
 	if( isset( $_POST['jbl_gfuaa_enable'] ) ) {
     	$notification['jbl_gfuaa_enable'] = rgpost( 'jbl_gfuaa_enable' );
+	}
+
+	if( isset( $_POST['jbl_gfuaa_delete_files_after'] ) ) {
+    	$notification['jbl_gfuaa_delete_files_after'] = rgpost( 'jbl_gfuaa_delete_files_after' );
 	}
 
     return $notification;
@@ -101,7 +124,24 @@ function jbl_gfuaa_maybe_add_attachments( $notification, $form, $entry ) {
 
             $notification['attachments'] = $attachments;
 		}
+
+		if( isset( $notification['jbl_gfuaa_delete_files_after'] ) && $notification['jbl_gfuaa_delete_files_after'] == 1 ) {
+			add_action( 'gform_after_email', 'jbl_gfuaa_delete_files', 10, 12 );
+		}
 	}
 
 	return $notification;
+}
+
+
+/**
+ * Delete uploaded files from server after sending the notification if the option is enabled.
+ */
+function jbl_gfuaa_delete_files( $is_success, $to, $subject, $message, $headers, $attachments, $message_format, $from, $from_name, $bcc, $reply_to, $entry ) {
+
+	if( $is_success ) {
+		foreach ( $attachments as $attachment ) {
+			unlink( $attachment );
+		}
+	}
 }
