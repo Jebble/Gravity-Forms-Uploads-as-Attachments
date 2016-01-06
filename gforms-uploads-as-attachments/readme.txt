@@ -9,7 +9,7 @@ License: GPLv2 or later.
 Adds the option to add all fileupload fields no notifications as attachments
 
 == Description ==
-! Requires Gravity Forms by Rocketgenius, Inc.
+*Requires Gravity Forms by Rocketgenius, Inc.*
 
 This plugin adds an option to notifications to add files uploaded to fileupload fields as attachment to that specific notification.
 
@@ -23,9 +23,11 @@ This option will delete the files as soon as the notification that has this opti
 Installation instructions for WordPress plugins can be found in the codex.
 https://codex.wordpress.org/Managing_Plugins#Installing_Plugins
 
+== Frequently Asked Questions ==
+
 == Screenshots ==
 1. Notification settings
 
 == Changelog ==
-0.1.0
-- Initial release
+#####1.0.0
+Initial release
