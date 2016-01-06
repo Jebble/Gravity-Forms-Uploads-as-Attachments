@@ -20,7 +20,17 @@ This option will delete the files as soon as the notification that has this opti
 
 
 == Installation ==
-Installation instructions for WordPress plugins can be found in the codex.
+To install this plugin follow these steps:
+
+- From the dashboard of your site, navigate to Plugins --> Add New.
+- Select the Upload option and hit "Choose File."
+- Navigate to and select the .zip file you can downlaod from this page.
+- Follow the instructions and wait till it's finished.
+- When it's finished, activate the plugin via the prompt. A message will show confirming activation was successful.
+
+To use the plugin simply go to the notification edit screen in gravity forms.
+
+Further / more instructions on installing WordPress plugins can be found in the codex.
 https://codex.wordpress.org/Managing_Plugins#Installing_Plugins
 
 == Frequently Asked Questions ==
