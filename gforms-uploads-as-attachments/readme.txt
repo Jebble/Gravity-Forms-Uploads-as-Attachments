@@ -24,7 +24,7 @@ To install this plugin follow these steps:
 
 - From the dashboard of your site, navigate to Plugins --> Add New.
 - Select the Upload option and hit "Choose File."
-- Navigate to and select the .zip file you can downlaod from this page.
+- Navigate to and select the .zip file you can download from this page.
 - Follow the instructions and wait till it's finished.
 - When it's finished, activate the plugin via the prompt. A message will show confirming activation was successful.
 
