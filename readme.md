@@ -14,5 +14,9 @@ This option will delete the files as soon as the notification that has this opti
 ![Settings](https://raw.githubusercontent.com/Jebble/Gravity-Forms-Uploads-as-Attachments/master/gforms-uploads-as-attachments/assets/screenshot-1.png)
 
 ## Changelog ##
+
+##### 1.0.1 #####
+- Fix for hanging AJAX processed forms.
+
 ##### 1.0.0 #####
 Initial release

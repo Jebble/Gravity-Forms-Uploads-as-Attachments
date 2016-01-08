@@ -39,5 +39,9 @@ https://codex.wordpress.org/Managing_Plugins#Installing_Plugins
 1. Notification settings
 
 == Changelog ==
+
+#####1.0.1
+- Fix for hanging AJAX processed forms.
+
 #####1.0.0
 Initial release

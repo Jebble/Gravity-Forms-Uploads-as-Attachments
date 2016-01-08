@@ -108,19 +108,18 @@ function jbl_gfuaa_maybe_add_attachments( $notification, $form, $entry ) {
 				$url = $entry[ $field['id'] ];
 			}
 
-			if ( empty( $url ) ) {
-                continue;
-            }
-            elseif ( $field['multipleFiles'] ) {
-                $uploaded_files = json_decode( stripslashes( $url ), true );
-                foreach ( $uploaded_files as $uploaded_file ) {
-                    $attachment = preg_replace( '|^(.*?)/gravity_forms/|', $upload_root, $uploaded_file );
-                    $attachments[] = $attachment;
-                }
-            } else {
-                $attachment = preg_replace( '|^(.*?)/gravity_forms/|', $upload_root, $url );
-                $attachments[] = $attachment;
-            }
+			if ( ! empty( $url ) ) {
+                if ( $field['multipleFiles'] ) {
+	                $uploaded_files = json_decode( stripslashes( $url ), true );
+	                foreach ( $uploaded_files as $uploaded_file ) {
+	                    $attachment = preg_replace( '|^(.*?)/gravity_forms/|', $upload_root, $uploaded_file );
+	                    $attachments[] = $attachment;
+	               	}
+	            } else {
+	                $attachment = preg_replace( '|^(.*?)/gravity_forms/|', $upload_root, $url );
+	                $attachments[] = $attachment;
+	            }
+	        }
 
             $notification['attachments'] = $attachments;
 		}
