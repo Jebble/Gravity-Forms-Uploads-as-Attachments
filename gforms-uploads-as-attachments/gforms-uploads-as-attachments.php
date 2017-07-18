@@ -5,7 +5,7 @@ Plugin URI: https://github.com/Jebble/Gravity-Forms-Uploads-as-Attachments
 Description: Adds an option to send files from the fileupload field(s) as attachment with notifications
 Version: 1.0.1
 Author: Jebble
-Author URI: http://jebble.nl/
+Author URI: https://www.jebble.nl/
 Text Domain: jbl_gfuaa
 */
 
