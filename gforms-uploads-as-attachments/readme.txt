@@ -2,7 +2,7 @@
 Contributors: jebble
 Tags: gravity forms, gravityforms, email, notification, attachment, attachments, uploads
 Requires at least: 2.5.0
-Tested up to: 4.8
+Tested up to: 4.9.8
 Stable tag: trunk
 License: GPLv2 or later.
 
